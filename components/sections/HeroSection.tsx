@@ -74,21 +74,34 @@ export function HeroSection() {
 
 
                 <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 tracking-tighter leading-tight flex flex-wrap justify-center gap-x-2 md:gap-x-4 drop-shadow-2xl">
-                    {words.map((word: string, i: number) => (
+                    {/* Efficient mobile-first animation logic */}
+                    <span className="md:hidden">
                         <motion.span
-                            key={i}
-                            initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{
-                                duration: 0.8,
-                                delay: 0.3 + i * 0.1,
-                                ease: [0.2, 0.65, 0.3, 0.9],
-                            }}
-                            className="inline-block"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
                         >
-                            {word}
+                            {title}
                         </motion.span>
-                    ))}
+                    </span>
+
+                    <span className="hidden md:contents">
+                        {words.map((word: string, i: number) => (
+                            <motion.span
+                                key={i}
+                                initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+                                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                transition={{
+                                    duration: 0.8,
+                                    delay: 0.3 + i * 0.1,
+                                    ease: [0.2, 0.65, 0.3, 0.9],
+                                }}
+                                className="inline-block"
+                            >
+                                {word}
+                            </motion.span>
+                        ))}
+                    </span>
                 </h1>
 
                 <motion.p
