@@ -17,7 +17,7 @@ export function AnimatedCounter({ value, duration = 1.5, className }: AnimatedCo
         stiffness: 70,
         duration: duration * 1000,
     });
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "-20px" });
 
     useEffect(() => {
         if (isInView) {

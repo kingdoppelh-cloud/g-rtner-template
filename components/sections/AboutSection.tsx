@@ -25,9 +25,9 @@ export function AboutSection() {
 
                         {/* Experience Badge */}
                         {siteConfig.socialProof.yearsExperience > 0 && (
-                            <div className="absolute -bottom-6 -right-6 md:right-10 bg-white p-6 rounded-xl shadow-xl border border-slate-100 hidden sm:block">
-                                <p className="text-4xl font-bold text-primary mb-1">{siteConfig.socialProof.yearsExperience}+</p>
-                                <p className="text-sm text-slate-600 font-medium uppercase tracking-wider">Jahre Erfahrung</p>
+                            <div className="absolute -bottom-6 -right-4 md:right-10 bg-white p-4 md:p-6 rounded-xl shadow-xl border border-slate-100 block">
+                                <p className="text-3xl md:text-4xl font-bold text-primary mb-1">{siteConfig.socialProof.yearsExperience}+</p>
+                                <p className="text-xs md:text-sm text-slate-600 font-medium uppercase tracking-wider">Jahre Erfahrung</p>
                             </div>
                         )}
                     </RevealOnScroll>
