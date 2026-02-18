@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
 
   --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
 
   --color-sidebar-ring: var(--sidebar-ring);
@@ -203,6 +204,6 @@
   h4,
   h5,
   h6 {
-    @apply tracking-tight;
+    @apply font-heading tracking-tight;
   }
 }

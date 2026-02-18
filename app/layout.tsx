@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
@@ -9,11 +9,17 @@ import { SmoothScroll } from "@/components/shared/SmoothScroll";
 import { CustomCursor } from "@/components/shared/CustomCursor";
 import { Preloader } from "@/components/shared/Preloader";
 
-const fontSans = DM_Sans({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["400", "500", "700"],
+});
+
+const fontHeading = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+  weight: ["500", "600", "700", "800"],
 });
 
 const fontMono = JetBrains_Mono({
@@ -37,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased bg-white text-slate-900 min-h-screen flex flex-col`}
+        className={`${fontSans.variable} ${fontHeading.variable} ${fontMono.variable} font-sans antialiased bg-white text-slate-900 min-h-screen flex flex-col`}
       >
         <Preloader />
         <SmoothScroll />
