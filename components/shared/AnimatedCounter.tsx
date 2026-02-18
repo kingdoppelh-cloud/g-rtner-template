@@ -28,13 +28,15 @@ export function AnimatedCounter({ value, duration = 1.5, className }: AnimatedCo
     useEffect(() => {
         return springValue.on("change", (latest) => {
             if (ref.current) {
-                // Round to integer and set state to trigger re-render if needed, 
-                // though strictly updating textContent is more performant for just numbers.
-                // For simple integers:
-                ref.current.textContent = Math.round(latest).toString();
+                const isDecimal = value % 1 !== 0;
+                if (isDecimal) {
+                    ref.current.textContent = latest.toFixed(1);
+                } else {
+                    ref.current.textContent = Math.round(latest).toString();
+                }
             }
         });
-    }, [springValue]);
+    }, [springValue, value]);
 
     return <span ref={ref} className={className}>{0}</span>;
 }
