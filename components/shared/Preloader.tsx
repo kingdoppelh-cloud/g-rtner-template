@@ -12,7 +12,7 @@ export function Preloader() {
             setIsLoading(false);
             // Unlock scroll
             document.body.style.overflow = "auto";
-        }, 2200); // 2.2s total intro
+        }, 1200); // 1.2s total intro (snappier)
 
         // Lock scroll initially
         if (isLoading) {

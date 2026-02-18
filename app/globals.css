@@ -206,4 +206,12 @@
   h6 {
     @apply font-heading tracking-tight;
   }
+
+  /* GPU Optimization for smooth scrolling & animations */
+  section,
+  .motion-gpu {
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+  }
 }
